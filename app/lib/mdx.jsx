@@ -20,6 +20,7 @@ export function getSortedProjectData() {
     return {
       id,
       title: matterResult.data.title,
+      description: matterResult.data.description,
       ...matterResult.data
     };
   });
