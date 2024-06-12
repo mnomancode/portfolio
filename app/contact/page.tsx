@@ -1,9 +1,18 @@
+import { Meteors } from "../components/meteors";
+import { Navigation } from "../components/nav";
 
 export default  function ContactPage() {
 
+
+
     return (
-        <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-        <h1 className="text-3xl font-bold">Contact</h1>
+        
+     
+     
+     <div className=" flex flex-col items-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative  justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+         <Navigation />
+        <h1 className="text-3xl font-bold animate-slide-right  text-zinc-400 hover:text-zinc-100">Contact</h1>
+        <Meteors number={10}  />
         </div>
         );
         

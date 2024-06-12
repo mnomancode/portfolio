@@ -20,7 +20,9 @@ export function getSortedProjectData() {
     return {
       id,
       title: matterResult.data.title,
+      date: matterResult.data.date,
       description: matterResult.data.description,
+      mainImage: matterResult.data.mainImage,
       ...matterResult.data
     };
   });
