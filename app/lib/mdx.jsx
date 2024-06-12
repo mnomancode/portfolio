@@ -40,6 +40,11 @@ export async function getPostData(id) {
   
   return {
     id,
+    title: matterResult.data.title,
+    date: matterResult.data.date,
+    description: matterResult.data.description,
+    mainImage: matterResult.data.mainImage,
+
     mdxSource,
     ...matterResult.data
   };
