@@ -5,19 +5,19 @@ import { calSans, inter } from "./fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: "flutterfit.dev",
-    template: "%s | flutterfit.dev",
+    default: "nomandev.com",
+    template: "%s | nomandev.com",
   },
   description: "Mobile App Developer Expert app developer Ios and Android",
   openGraph: {
-    title: "flutterfit.dev",
+    title: "nomandev.com",
     description:
       "Mobile App Developer Expert app developer Ios and Android",
-    url: "https://flutterfit.dev",
-    siteName: "flutterfit.dev",
+    url: "https://nomandev.com",
+    siteName: "nomandev.com",
     images: [
       {
-        url: "https://flutterfit.dev/og.png",
+        url: "https://nomandev.com/og.png",
         width: 1920,
         height: 1080,
       },
