@@ -1,4 +1,6 @@
+"use Client";
 import { cn } from "../lib/utils/cn";
+import { Card } from "./card";
 
 export const BentoGrid = ({
   className,
@@ -39,6 +41,9 @@ export const BentoGridItem = ({
         className
       )}
     >
+      <Card>
+
+      
       {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
         {icon}
@@ -49,6 +54,7 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
+      </Card>
     </div>
   );
 };
