@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { getPostData } from "../../lib/mdx";
+import { MDXRemote } from 'next-mdx-remote'
 
 type Props = {
   params: {
@@ -19,6 +20,9 @@ export default async function ProjectDetails({ params }: Props) {
 
 
 var project = await getPostData(ProjectId);
+
+
+console.log(project.mdxSource.frontmatter.description);
 
 
 
@@ -40,6 +44,10 @@ var project = await getPostData(ProjectId);
           />
 
           <br />
+          <div className="wrapper">
+            
+          {/* <MDXRemote {...project.mdxSource} /> */}
+          </div>
              <p  className="justify-center items-center flex h-11   bg-purple-600 hover:bg-primary">Title: {project.title} </p>
           <br />
           
