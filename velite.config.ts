@@ -5,7 +5,6 @@ const meta = s
   .object({
     title: s.string().optional(),
     description: s.string().optional(),
-    keywords: s.array(s.string()).optional()
   })
   .default({})
 
@@ -18,11 +17,14 @@ const meta = s
         .object({
           id: s.string().max(20),
           title: s.string().max(99),
-          date: s.string().max(30),
           featured: s.boolean().default(false),
+          date: s.string().max(30),
+          description: s.string().max(999).optional(),
+          mainImage: s.string().optional(),
           meta: meta,
 
-          description: s.string().max(999).optional(),
+
+          
           screens: s.array(s.string() ).default([]),
           screenShots: s.array(s.string()).default([]),
         
