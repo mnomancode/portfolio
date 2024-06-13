@@ -7,10 +7,12 @@ type Props = {
 };
 
 type Project = {
+	permalink: string;
     title: string;
-    description: string;
     date: string;
+    body: string;
     id: string;
+    description?: string | undefined;
 };
 
 export const Article: React.FC<Props> = ({ project }) => {
