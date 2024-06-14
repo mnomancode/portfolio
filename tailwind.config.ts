@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
 		extend: {
 
+			spacing: {
+				
+				80: '20rem',
+			  },
+
 			
 			typography: {
 				DEFAULT: {
@@ -146,6 +151,7 @@ const config: Config = {
 	},
   plugins: [
 	require('@tailwindcss/typography'),
+	require('@tailwindcss/line-clamp'),
 		
 	],
 };
