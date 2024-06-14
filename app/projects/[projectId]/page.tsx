@@ -47,19 +47,11 @@ if (selectedProject == null) notFound();
 
 
 
-  return <div className="">
-          <p  className="justify-center items-center flex h-11   bg-purple-zinc hover:bg-primary">Post: {selectedProject.title} </p>
-          <br />
+  return <div className=" justify items-center justify-center px-10">
          
 
-          <br />
-          <div className="wrapper">
-            
-          </div>
-             {/* <p  className="justify-center items-center flex h-11   bg-purple-600 hover:bg-primary">Title: {project.title} </p> */}
-          <br />
           
-          <div className="wrapper">
+          <div className=" prose">
             {selectedProject && <MDXContent code={selectedProject.body} />}
           </div>
         

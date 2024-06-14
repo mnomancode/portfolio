@@ -20,37 +20,14 @@ export default async function ProjectsPage() {
 
   
   
-  // const allProjects =getSortedProjectData();
-  // const featured = allProjects.find((project) => project.id === "enjoytv")!;
-  // const top2 = allProjects.find((project) => project.id === "digital-cash")!;
-  // const top3 = allProjects.find((project) => project.id === "yoku")!;
-
-  // const remainingProjects = allProjects.filter(
-  //   (project) => project.id !== "enjoytv" && project.id !== "digital-cash" && project.id !== "yoku",
-  // ) .sort(
-  //   (a, b) =>
-  //     new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-  //     new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-  
-  // );
 
 
-  const projectsList = projects.sort(
-    (a, b) =>
-      new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-      new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-      ).map((project) => (
-        
-    <Card key={project.id}>
-      <Link
-      key={project.id}
-      href={project.permalink} >
-        <Article project={project} views={0} />
-          </Link>
-          </Card>
-    ));
-
-    const bentoGrid = projects.map((project) => (
+    const bentoGrid = projects.sort(
+      (a, b) =>
+        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
+        ).
+    map((project) => (
      
        
         <BentoGridItem
@@ -60,30 +37,40 @@ export default async function ProjectsPage() {
         link={project.permalink}
 
         header={
-          
-
           <div className="relative  min-h-[12rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
-        <Image 
-        src={project.mainImage ?? "/images/placeholder.png"}
-        alt={project.title}
-        layout="fill" // required
-        objectFit="cover" // change as you like
-        className="rounded-xl  " // you can use other classes here too
-        />
+          <Image 
+                src={project.mainImage ?? "/images/placeholder.png"}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover" 
+                className="rounded-xl  " 
+               />
         </div>
         
         
       }
-        icon={
+      bottom={
           <div className="flex justify-between">
-        <CalendarCheck2 className="w-4 h-4 mt-5  "  color="white"/> 
-        <Eye className="w-4 h-4 mt-5  "  color="white"/>
+            <time className="flex text-xs text-zinc-500 mt-4"
+                dateTime={new Date(project.date).toISOString()}>
+                   <CalendarCheck2 className="w-4 h-4  mr-2"  />
+                   {Intl.DateTimeFormat(undefined, {dateStyle: "medium",})
+                        .format(new Date(project.date))}
+            </time>
+
+            <span className="flex items-center gap-1 text-xs text-zinc-500 mt-4">
+                <Eye className="w-4 h-4" />
+                {Intl.NumberFormat("en-US", { notation: "compact" }).format(1200)}
+            </span>
+       
+
+        
           </div>
          }
       
         className={project.featured == true ? "md:col-span-2" : " "}
         />
-        // </Link>
+       
         
     ));
 
@@ -99,9 +86,14 @@ export default async function ProjectsPage() {
           <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
             Projects
           </h2>
-          <p className="mt-4 text-zinc-400">
-            Some of the projects are from work and some are on my own time.
+          <span className="flex mt-4 items-center text-zinc-200 hover:text-zinc-300 w-auto">
+            <p 
+            className="text-md md:text-xl  font-bold mr-2"
+            >Where Ideas Come to Life: </p>
+          <p className=" text-md md:text-xl font-medium">
+               My Project Highlights.
           </p>
+          </span>
         </div>
         <div className="w-full h-px bg-zinc-800" />
         
