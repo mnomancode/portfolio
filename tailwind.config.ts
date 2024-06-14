@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
 		extend: {
 
+			spacing: {
+				
+				80: '20rem',
+			  },
+
 			
 			typography: {
 				DEFAULT: {

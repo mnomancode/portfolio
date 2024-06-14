@@ -2,6 +2,9 @@ import * as runtime from 'react/jsx-runtime'
 import Image from 'next/image'
 
 import { Card } from './card'
+import {Meteors} from "./meteors";
+import {Spotlight} from "./Spotlight";
+
 
 const sharedComponents = {
   h1: (props: any) => <h1 className="text-4xl font-bold text-slate-100" {...props} />,
@@ -14,7 +17,9 @@ const sharedComponents = {
   ol: (props: any) => <ol className="list-decimal pl-4" {...props} />,
   li: (props: any) => <li className="text-slate-100" {...props} />,
     Card,
-   Image
+   Image,
+  Meteors,
+  Spotlight,
 
 
 }
@@ -40,7 +45,6 @@ export const MDXContent = ({ code, components, ...props }: MDXProps) => {
 
   const Component = useMDXComponent(code)
 
-  console.log(Component, components, sharedComponents)
   
   return <Component components={{ ...sharedComponents, ...components }} {...props} />
 }

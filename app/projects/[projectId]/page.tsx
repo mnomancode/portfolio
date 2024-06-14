@@ -8,6 +8,8 @@ import {projects} from "../../../.velite/index"
 import { MDXContent } from '../../components/mdx-components';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next'
+import { TracingBeam } from "@/app/components/tracing-beam";
+import { Spotlight } from "@/app/components/Spotlight";
 
 type Props = {
   params: {
@@ -47,20 +49,29 @@ if (selectedProject == null) notFound();
 
 
 
-  return <div className=" justify items-center justify-center px-10">
+  return <div className=" pt-20 pb-80 px-10">
          
 
-          
+
+         <Spotlight/>
+         <TracingBeam className="px-10">
           <div className=" prose">
             {selectedProject && <MDXContent code={selectedProject.body} />}
           </div>
         
-          <br />
+          </TracingBeam>
+          
+
+          <div className="pb-80 " />
+          {/* <div className="py-11" /> */}
+          {/* <div className="py-11" /> */}
+
+        
           
           
 
             
 
          
-      </div>
+     </div>
 }
