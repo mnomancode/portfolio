@@ -6,7 +6,7 @@ import { Card } from "../components/card";
 // import { getSortedProjectData } from "../lib/mdx";
 
 import Image from "next/image";
-import { Eye } from "lucide-react";
+import { CalendarCheck2, Eye } from "lucide-react";
 import { Article } from "./article";
 import {projects} from "../../.velite/index";
 import { BentoGrid, BentoGridItem } from "../components/bento-grid";
@@ -52,34 +52,38 @@ export default async function ProjectsPage() {
 
     const bentoGrid = projects.map((project) => (
      
-        <Link
-        key={project.id}
-        href={project.permalink} >
+       
         <BentoGridItem
         key={project.id}
         title={project.title}
-        description={project.description!.slice(0, 40)}
+        description={project.description!}
+        link={project.permalink}
 
         header={
           
 
-          <div className="relative   min-h-[12rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
+          <div className="relative  min-h-[12rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
         <Image 
         src={project.mainImage ?? "/images/placeholder.png"}
         alt={project.title}
         layout="fill" // required
         objectFit="cover" // change as you like
-        className="rounded-xl" // you can use other classes here too
+        className="rounded-xl  " // you can use other classes here too
         />
         </div>
         
         
       }
-        icon={<Eye className="w-4 h-4  m-2"  color="white"/>}
+        icon={
+          <div className="flex justify-between">
+        <CalendarCheck2 className="w-4 h-4 mt-5  "  color="white"/> 
+        <Eye className="w-4 h-4 mt-5  "  color="white"/>
+          </div>
+         }
       
-        className={project.featured == true ? "md:col-span-2" : ""}
+        className={project.featured == true ? "md:col-span-2" : " "}
         />
-        </Link>
+        // </Link>
         
     ));
 
@@ -100,9 +104,14 @@ export default async function ProjectsPage() {
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
-        <BentoGrid className="max-w-4xl mx-auto gap-10 ">
+        
+
+        <BentoGrid className="max-w-4xl mx-auto ">
       {bentoGrid}
    </BentoGrid>
+
+
+
 
        
  {/* <Card> */}
