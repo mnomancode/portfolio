@@ -11,6 +11,7 @@ import type { Metadata } from 'next'
 import { TracingBeam } from "@/app/components/tracing-beam";
 import { Spotlight } from "@/app/components/Spotlight";
 
+
 type Props = {
   params: {
     projectId: string;
@@ -51,7 +52,15 @@ if (selectedProject == null) notFound();
 
   return <div className=" pt-20 pb-80 px-10">
          
+         <Image  
+                src="/projects/enjoy-tv/et1.png"
+                alt={"Enjoy TV"}
+                width={120}
+                height={100}
+                
+                className="aspect-[9/16] hover:aspect-square rounded-xl" 
 
+               />
 
          <Spotlight/>
          <TracingBeam className="px-10">

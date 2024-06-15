@@ -9,6 +9,11 @@ const config: Config = {
 
   theme: {
 		extend: {
+			aspectRatio: {
+				'4/3': '4 / 3',
+				'16/9': '16 / 9',
+				'9/16': '9/ 16',
+			  },
 
 			spacing: {
 				
