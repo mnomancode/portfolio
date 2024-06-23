@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next'
 import { TracingBeam } from "@/app/components/tracing-beam";
 import { Spotlight } from "@/app/components/Spotlight";
+import { Navigation } from "@/app/components/nav";
 
 
 type Props = {
@@ -50,9 +51,11 @@ if (selectedProject == null) notFound();
 
 
 
-  return <div className=" pt-20 pb-80 px-10">
+  return <div className=" pt-0 pb-80 px-10">
+     <Navigation />
+
          
-         <Image  
+         {/* <Image  
                 src="/projects/enjoy-tv/et1.png"
                 alt={"Enjoy TV"}
                 width={120}
@@ -60,15 +63,18 @@ if (selectedProject == null) notFound();
                 
                 className="aspect-[9/16] hover:aspect-square rounded-xl" 
 
-               />
+               /> */}
 
-         <Spotlight/>
-         <TracingBeam className="px-10">
+         {/* <Spotlight/> */}
+         <TracingBeam className="px-10 pt-20 hidden sm:block">
           <div className=" prose">
             {selectedProject && <MDXContent code={selectedProject.body} />}
           </div>
         
           </TracingBeam>
+          <div className=" prose block sm:hidden pt-20 ">
+            {selectedProject && <MDXContent code={selectedProject.body} />}
+          </div>
           
 
           <div className="pb-80 " />

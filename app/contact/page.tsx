@@ -11,13 +11,12 @@ export default  function ContactPage() {
         
      
      
-     <div className=" flex flex-col  items-center justify-start bg-black/[0.96] antialiased bg-grid-white/[0.02] w-screen h-screen  bg-gradient-to-tl from-black via-zinc-600/20 to-black bg-black">
-    {/* // <div className=" grid items-center w-screen pb-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]  overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black"> */}
+    <div className="relative pb-16 items-center justify-center"> 
          <Navigation />
-        <Meteors number={10}  />
+        {/* <Meteors number={10}  /> */}
 
              <TypewriterEffectSmoothDemo  />
-         <div className="flex flex-col sm:flex-row ">
+         <div className="pt-40 flex flex-wrap items-center justify-center">
                      <AnimatedPin
                         href={"https://github.com/noman9k"}
                         title={"Github"}
@@ -32,7 +31,7 @@ export default  function ContactPage() {
                             href={"https://twitter.com/noman9k"}
                             title={"Twitter"}
                             description={"Follow me on Twitter"}    
-                        />
+                        /> 
 
                        
 
